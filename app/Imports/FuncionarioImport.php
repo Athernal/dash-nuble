@@ -5,7 +5,7 @@ namespace App\Imports;
 use App\Models\Funcionario;
 use Maatwebsite\Excel\Concerns\ToModel;
 
-class ActividadImport implements ToModel
+class FuncionarioImport implements ToModel
 {
     /**
     * @param array $row

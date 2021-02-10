@@ -9,6 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\FuncionarioImport;
 use App\Models\Funcionario;
 
+
 class FuncionarioController extends Controller
 {
     /**
@@ -29,7 +30,7 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        return 'pasa';
+        //
     }
 
     /**

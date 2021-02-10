@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <form action="{{ route('FuncionarioImport') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('importFuncionario') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                     <div class="form-group">
                         <label for="file">Seleccione el archivo a cargar</label>
