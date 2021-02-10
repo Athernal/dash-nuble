@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->names('actividades');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,5 +26,3 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/actividades', function ()
 //importar Actividades
 Route::post('/actividades/import', 'App\Http\Controllers\ActividadController@importExcel')->name('importActividades');
     
-Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->names('actividades');
-
