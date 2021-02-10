@@ -8,11 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Funcionario extends Model
 {
     use HasFactory;
-    protected $table = 'jefe_de_unidad';
+    protected $table = 'funcionarios';
     protected $fillable = [
-        'id', 
-        'nombre', 
-        'correo'
+        'id',
+        'rut',
+        'apellidoP',
+        'apellidoM', 
+        'nombre',
+        'calidadJuridica',
+        'unidad',
+        'correo',
+        'estado',
     ];
 
     public function conformaUnidad()

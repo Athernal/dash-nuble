@@ -2,16 +2,12 @@
     <h5>Lista de actividades existentes</h5>
 </div>
 <div class="card-body">
-    <table style="table-layout:fixed;" id="actividad" class="table table-hover data-table">
+    <table style="table-layout:fixed;" id="funcionario" class="table table-hover data-table">
         <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Periodicidad</th>
-                <th scope="col">Fecha Inicio</th>
-                <th scope="col">Fecha Termino</th>
-                <th scope="col">Personas Asignadas</th>
-                <th scope="col">Cargo</th>
+                <th scope="col">correo</th>
             </tr>
         </thead>
         <tbody>
@@ -19,11 +15,7 @@
                 <tr>
                     <th scope="row">{{ $actividad->id }}</th>
                     <td>{{ $actividad->nombre }}</td>
-                    <td>{{ $actividad->periodicidad }}</td>
-                    <td>{{ $actividad->fechaInicio }}</td>
-                    <td>{{ $actividad->fechaTermino }}</td>
-                    <td>{{ $actividad->personasAsignadas }}</td>
-                    <td>{{ $actividad->cargo }}</td>
+                    <td>{{ $actividad->correo }}</td>
                     {{--<td>
                         <div class="btn-group" role="group">
                             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"

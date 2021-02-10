@@ -15,8 +15,14 @@ class CreateFuncionariosTable extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
+            $table->string('rut');
+            $table->string('apellidoP');
+            $table->string('apellidoM');
             $table->string('nombre');
+            $table->string('calidadJuridica');
+            $table->string('unidad');
             $table->string('correo');
+            $table->string('estado');
             $table->timestamps();
         });
     }
