@@ -19,7 +19,7 @@ class FuncionarioController extends Controller
     public function index()
     {
         $actividades = Funcionario::orderBy('id', 'ASC')->get();
-        return view('planificacion.actividades.index',compact('actividades'));
+        return view('planificacion.funcionarios.index',compact('funcionarios'));
     }
 
     /**

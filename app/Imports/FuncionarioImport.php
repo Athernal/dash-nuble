@@ -16,8 +16,14 @@ class ActividadImport implements ToModel
     {
         return new Funcionario([
             'id',
-            'nombre' => $row[1],
-            'correo' => $row[2], 
+            'rut' => $row[1],
+            'apellidoP' => $row[2],
+            'apellidoM' => $row[3],
+            'nombre' => $row[4],
+            'calidadJuridica' => $row[5],
+            'unidad' => $row[6],
+            'correo' => $row[7],
+            'estado' => $row[8],
         ]);
     }
 }
