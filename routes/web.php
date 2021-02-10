@@ -25,4 +25,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/actividades', function ()
 
 //importar Actividades
 Route::post('/actividades/import', 'App\Http\Controllers\ActividadController@importExcel')->name('importActividades');
+Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->names('actividades');
+
     
