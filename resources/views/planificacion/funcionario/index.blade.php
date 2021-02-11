@@ -74,6 +74,6 @@
     </div>
 </div>
 </div>
-hola
+hola hola
 </div>
 </x-app-layout>
