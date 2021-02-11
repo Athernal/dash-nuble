@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -5,106 +7,68 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-32 lg:px-16">
+    <div class="py-3">
+        <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <form action="{{ route('importFuncionario') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="file">Seleccione el archivo a cargar</label>
                         <input class="form form-control" type="file" name="file">
-                        <button class="btn-sm float-middle">Importar</button>
+                        <button class="btn-sm float-right">Importar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="flex bg-white px-4 py-3 border-t border-gray-200 sm:px-6">
-        <input 
-            wire:model="search"
-            class="form-input rounded-md shadow-sm mt-1 block w-full" 
-            type="text" 
-            laceholder="Buscar..."
-        >
-        <div class="form-input rounded-md shadow-sm mt-1 ml-6 block">
-            <select wire:model="perPage" class="outline-none text-gray-500 text-sm">
-                <option value="5">5 por página</option>
-                <option value="10">10 por página</option>
-                <option value="15">15 por página</option>
-                <option value="25">25 por página</option>
-                <option value="50">50 por página</option>
-            </select>
-        </div>
-    </div>  
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-1">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="flex flex-col">
-                    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                                <div class="card-body">
-                                    <table style="table-layout:fixed;" id="funcionario"
-                                        class="table table-hover data-table min-w-full divide-y divide-gray-200">
-                                        <thead class="bg-gray-50">
-                                            <tr>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    ID</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Rut</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Apellido Paterno</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Apellido Materno</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Nombre</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Calidad Juridica</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Unidad</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    correo</th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-left text-xs font-small text-gray-500 uppercase tracking-wider">
-                                                    Estado</th>
-                                                <th scope="col" class="relative px-6 py-3">
-                                                   <span class="sr-only">Edit</span>
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y divide-gray-200">
-                                            @foreach ($funcionarios as $funcionario)
-                                                <tr class="px-6 py-4 whitespace-nowrap">
-                                                    <th scope="row">{{ $funcionario->id }}</th>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->rut }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->apellidoP }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->apellidoM }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->nombre }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->calidadJuridica }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->unidad }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->correo }}</td>
-                                                    <td class="text-sm font-small text-gray-900">{{ $funcionario->estado }}</td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-small">
-                                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
+
+                <div class="card-body">
+                    <div class="table-responsive-sm">
+                        <table style="table-layout:fixed;" id="funcionario" class="min-w-full divide-y divide-gray-200" cellspacing="0" width="auto%">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" class="text-xs font-medium" width="30px" >ID</th>
+                                    <th scope="col" class="text-xs font-medium">Rut</th>
+                                    <th scope="col" class="text-xs font-medium">Nombre</th>
+                                    <th scope="col" class="text-xs font-medium">Apellido Paterno</th>
+                                    <th scope="col" class="text-xs font-medium">Apellido Materno</th>
+                                    <th scope="col" class="text-xs font-medium">Calidad Juridica</th>
+                                    <th scope="col" class="text-xs font-medium">Unidad</th>
+                                    <th scope="col" class="text-xs font-medium">correo</th>
+                                    <th scope="col" class="text-xs font-medium">Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($funcionarios as $funcionario)
+                                    <tr>
+                                        <th scope="row" class="text-xs font-medium">{{ $funcionario->id }}</th>
+                                        <td class="text-xs font-medium">{{ $funcionario->rut }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->nombre }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->apellidoP }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->apellidoM }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->calidadJuridica }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->unidad }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->correo }}</td>
+                                        <td class="text-xs font-medium">{{ $funcionario->estado }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+</script>
