@@ -26,7 +26,7 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-20 right-20 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/actividades') }}" class="text-sm text-gray-700 underline">principal</a>
+                        <a href="{{ url('/principal') }}" class="text-sm text-gray-700 underline">principal</a>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
