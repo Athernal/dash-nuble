@@ -14,13 +14,14 @@ class CreateActividadsTable extends Migration
     public function up()
     {
         Schema::create('actividads', function (Blueprint $table) {
-            $table->id();
+            $table->primary('id');
             $table->string('nombre');
             $table->string('periodicidad');
             $table->date('fechaInicio');
             $table->date('fechaTermino');
             $table->integer('personasAsignadas');
             $table->string('cargo');
+            $table->boolean('estado')->default(false);
             $table->timestamps();
         });
     }

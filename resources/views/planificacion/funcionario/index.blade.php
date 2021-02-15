@@ -30,29 +30,20 @@
                         <table style="table-layout:fixed;" id="funcionario" class="min-w-full divide-y divide-gray-200" cellspacing="0" width="auto%">
                             <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col" class="text-xs font-medium" width="30px" >ID</th>
-                                    <th scope="col" class="text-xs font-medium">Rut</th>
                                     <th scope="col" class="text-xs font-medium">Nombre</th>
                                     <th scope="col" class="text-xs font-medium">Apellido Paterno</th>
                                     <th scope="col" class="text-xs font-medium">Apellido Materno</th>
-                                    <th scope="col" class="text-xs font-medium">Calidad Juridica</th>
                                     <th scope="col" class="text-xs font-medium">Unidad</th>
-                                    <th scope="col" class="text-xs font-medium">correo</th>
-                                    <th scope="col" class="text-xs font-medium">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($funcionarios as $funcionario)
                                     <tr>
-                                        <th scope="row" class="text-xs font-medium">{{ $funcionario->id }}</th>
-                                        <td class="text-xs font-medium">{{ $funcionario->rut }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->nombre }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->apellidoP }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->apellidoM }}</td>
-                                        <td class="text-xs font-medium">{{ $funcionario->calidadJuridica }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->unidad }}</td>
-                                        <td class="text-xs font-medium">{{ $funcionario->correo }}</td>
-                                        <td class="text-xs font-medium">{{ $funcionario->estado }}</td>
+                                        <td> {{ $funcionario->id }}<a href="ver-funcionarios" data-toggle="modal">Ver Detalles</a></button></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -62,6 +53,32 @@
             </div>
         </div>
     </div>
+    <div id="ver-funcionarios" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form id="form_funcionarios" action="{{ route('funcionarios.show') }}" method="post">
+              @csrf
+              <div class="modal-header">
+                <h4 class="modal-title">Datos del Funcionario</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Nombre</label>
+                </div>
+                <div class="form-group">
+                  <label>Rut</label>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                </div>
+                <div class="form-group">
+                  <label>Teléfono</label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 </x-app-layout>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

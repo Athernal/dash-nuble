@@ -14,7 +14,7 @@ class CreateObjetivosTable extends Migration
     public function up()
     {
         Schema::create('objetivos', function (Blueprint $table) {
-            $table->id();
+            $table->primary('id');
             $table->string('nombre');
             $table->string('duracion');
             $table->integer('ponderacionAnual');

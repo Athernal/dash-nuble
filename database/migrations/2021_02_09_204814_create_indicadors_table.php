@@ -14,7 +14,7 @@ class CreateIndicadorsTable extends Migration
     public function up()
     {
         Schema::create('indicadors', function (Blueprint $table) {
-            $table->id();
+            $table->primary('id');
             $table->string('nombre');
             $table->string('descripcion');
             $table->integer('porcentajeDesarrollado');

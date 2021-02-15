@@ -14,9 +14,8 @@ class CreateActividadHasFuncionariosTable extends Migration
     public function up()
     {
         Schema::create('actividad_has_funcionarios', function (Blueprint $table) {
-            $table->id();
-            $table->idActividad();
-            $table->idFuncionario();
+            $table->foreign('id_actividad')->references('id')->on('actividads');
+            $table->foreign('id_funcionario')->references('id')->on('funcionarios');
             $table->timestamps();
         });
     }

@@ -14,15 +14,15 @@ class CreateFuncionariosTable extends Migration
     public function up()
     {
         Schema::create('funcionarios', function (Blueprint $table) {
-            $table->id();
-            $table->string('rut');
+            $table->primary('id');
+            $table->string('rut')->unique();
             $table->string('apellidoP');
             $table->string('apellidoM');
             $table->string('nombre');
             $table->string('calidadJuridica');
             $table->string('unidad');
             $table->string('correo');
-            $table->string('estado');
+            $table->boolean('estado')->default(true);
             $table->timestamps();
         });
     }

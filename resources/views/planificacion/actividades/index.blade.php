@@ -30,25 +30,20 @@
                         <table style="table-layout:fixed;" id="funcionario" class="min-w-full divide-y divide-gray-200">
                             <thead class="thead-dark">
                 <tr>
-                    <th scope="col" class="text-xs font-medium" width="4%">ID</th>
                     <th scope="col" class="text-xs font-medium" width="55%">Nombre</th>
                     <th scope="col" class="text-xs font-medium" width="6%">Periodicidad</th>
                     <th scope="col" class="text-xs font-medium" width="8%">Fecha Inicio</th>
                     <th scope="col" class="text-xs font-medium" width="8%">Fecha Termino</th>
-                    <th scope="col" class="text-xs font-medium" width="6%">Personas Asignadas</th>
-                    <th scope="col" class="text-xs font-medium" width="13%">Cargo</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($actividades as $actividad)
                     <tr>
-                        <th scope="row" class="text-xs font-medium">{{ $actividad->id }}</th>
                         <td class="text-xs font-medium">{{ $actividad->nombre }}</td>
                         <td class="text-xs font-medium">{{ $actividad->periodicidad }}</td>
                         <td class="text-xs font-medium">{{ $actividad->fechaInicio }}</td>
                         <td class="text-xs font-medium">{{ $actividad->fechaTermino }}</td>
-                        <td class="text-xs font-medium">{{ $actividad->personasAsignadas }}</td>
-                        <td class="text-xs font-medium">{{ $actividad->cargo }}</td>
+                        <td><button type="button" class="btn btn-primary">Ver Detalles</button></td>
                     </tr>
                 @endforeach
             </tbody>

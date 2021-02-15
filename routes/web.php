@@ -39,6 +39,9 @@ Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->nam
 Route::post('/funcionario/import', 'App\Http\Controllers\FuncionarioController@importExcel')->name('importFuncionario');
 Route::resource('/funcionarios', 'App\Http\Controllers\FuncionarioController');
 
+Route::post('/funcionarios/{id}', [FuncioniarioController::class, 'show'])->name('funcionarios.show');
+
+
 
 
     

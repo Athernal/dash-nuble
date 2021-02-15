@@ -17,7 +17,8 @@ class Actividad extends Model
         'fechaInicio', 
         'fechaTermino', 
         'personasAsignadas', 
-        'cargo'
+        'cargo',
+        'estado' //finalizado o no 
     ];
 
     public function compuestoPorIndicador()
