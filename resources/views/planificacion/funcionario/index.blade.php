@@ -43,7 +43,7 @@
                                         <td class="text-xs font-medium">{{ $funcionario->apellidoP }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->apellidoM }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->unidad }}</td>
-                                        <td> {{ $funcionario->id }}<a href="ver-funcionarios" data-toggle="modal">Ver Detalles</a></button></td>
+                                        <td><button type="button" class="btn btn-primary"><a href="{{route('funcionarios.show', $funcionario->id)}}" data-toggle="modal">Ver Detalles</a></button></td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -53,32 +53,6 @@
             </div>
         </div>
     </div>
-    <div id="ver-funcionarios" class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form id="form_funcionarios" action="{{ route('funcionarios.show') }}" method="post">
-              @csrf
-              <div class="modal-header">
-                <h4 class="modal-title">Datos del Funcionario</h4>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label>Nombre</label>
-                </div>
-                <div class="form-group">
-                  <label>Rut</label>
-                </div>
-                <div class="form-group">
-                  <label>Email</label>
-                </div>
-                <div class="form-group">
-                  <label>Teléfono</label>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
 </x-app-layout>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

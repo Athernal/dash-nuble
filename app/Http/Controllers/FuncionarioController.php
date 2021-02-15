@@ -49,9 +49,10 @@ class FuncionarioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Funcionario $funcionario)
     {
-        //
+        //return view('planificacion.funcionario.show',compact('funcionarios'));
+        return view('planificacion.funcionario.show');
     }
 
     /**

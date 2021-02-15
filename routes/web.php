@@ -34,13 +34,14 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/funcionarios', function (
 })->name('funcionarios');
 
 //importar Actividades
+Route::resource('/funcionarios', 'App\Http\Controllers\FuncionarioController');
 Route::post('/actividades/import', 'App\Http\Controllers\ActividadController@importExcel')->name('importActividades');
 Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->names('actividades');
 Route::post('/funcionario/import', 'App\Http\Controllers\FuncionarioController@importExcel')->name('importFuncionario');
-Route::resource('/funcionarios', 'App\Http\Controllers\FuncionarioController');
 
-Route::post('/funcionarios/{id}', [FuncioniarioController::class, 'show'])->name('funcionarios.show');
 
+//Route::post('/funcionarios/{id?}', [FuncioniarioController::class, 'show'])->name('funcionario.show');
+//Route::view('/funcionarios/{id?}', 'funcionario.show');
 
 
 
