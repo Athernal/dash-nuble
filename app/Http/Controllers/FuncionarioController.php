@@ -29,7 +29,7 @@ class FuncionarioController extends Controller
      */
     public function create()
     {
-        return 'pasa';
+        //
     }
 
     /**

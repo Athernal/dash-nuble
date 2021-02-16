@@ -51,7 +51,8 @@ class ActividadController extends Controller
      */
     public function show($id)
     {
-        //
+        $actividad = Actividad::where('id', '=', $id)->first();
+        return view('planificacion.actividades.show', compact('actividad'));
     }
 
     /**

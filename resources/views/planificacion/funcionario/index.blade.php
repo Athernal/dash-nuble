@@ -1,8 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
-
-
 
 <x-app-layout>
     <x-slot name="header">
@@ -31,7 +28,7 @@
                 <div class="card-body">
                     <div class="table-responsive-sm">
                         <table id="funcionarios" class="table table-striped" style="width:100%">
-                            <thead>
+                            <thead class="thead-dark">
                                 <tr>
                                     <th scope="col" class="text-xs font-medium">Nombre</th>
                                     <th scope="col" class="text-xs font-medium">Apellido Paterno</th>
@@ -49,7 +46,8 @@
                                         <td class="text-xs font-medium">{{ $funcionario->apellidoM }}</td>
                                         <td class="text-xs font-medium">{{ $funcionario->conformaUnidad->nombre }}</td>
                                         <td><button type="button" class="btn btn-primary"><a
-                                                    href="{{ route('funcionarios.show', $funcionario->id) }}">Ver Detalles</a></button></td>
+                                                    href="{{ route('funcionarios.show', $funcionario->id) }}">Ver
+                                                    Detalles</a></button></td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -76,9 +74,13 @@
     integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
 </script>
 
-{{--Datatables--}}
+{{-- Datatables --}}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
 
-<script>$(document).ready(function() {    $('#funcionarios').DataTable();} );</script>
+<script>
+    $(document).ready(function() {
+        $('#funcionarios').DataTable();
+    });
 
+</script>

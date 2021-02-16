@@ -12,10 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->names('actividades');
-//Route::resource('/funcionarios', 'App\Http\Controllers\FuncionarioController');
-//Route::get('/funcionarios', 'App\Http\Controllers\FuncionarioController@index');
-
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,15 +29,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/funcionarios', function (
     return view('funcionarios');
 })->name('funcionarios');
 
-//importar Actividades
+//importar Actividades y Funcionarios
 Route::resource('/funcionarios', 'App\Http\Controllers\FuncionarioController');
 Route::post('/actividades/import', 'App\Http\Controllers\ActividadController@importExcel')->name('importActividades');
-Route::resource('/actividades', 'App\Http\Controllers\ActividadController')->names('actividades');
+Route::resource('/actividades', 'App\Http\Controllers\ActividadController');
 Route::post('/funcionario/import', 'App\Http\Controllers\FuncionarioController@importExcel')->name('importFuncionario');
 
 
-//Route::post('/funcionarios/{id?}', [FuncioniarioController::class, 'show'])->name('funcionario.show');
-//Route::view('/funcionarios/{id?}', 'funcionario.show');
 
 
 

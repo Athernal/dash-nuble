@@ -3,7 +3,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('funcionarios') }}
+            {{ __('actividades') }}
         </h2>
     </x-slot>
 
@@ -12,46 +12,43 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header" STYLE="font-variant:small-caps">
-                            Datalle del funcionario
+                        <div class="card-header " STYLE="font-variant:small-caps">
+                            Detalle de la actividad
                         </div>
                         <div class="card-body">
                             <table class="table" style="table-layout:fixed;">
                                 <tr>
-                                    <th>Rut:</th>
-                                    <td>{{$funcionario->rut}}</td>
-                                </tr>
-                                <tr>
                                     <th>Nombre:</th>
-                                    <td>{{$funcionario->nombre}}</td>
+                                    <td>{{ $actividad->nombre }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Apellido Paterno:</th>
-                                    <td>{{$funcionario->apellidoP}}</td>
+                                    <th>Periodicidad:</th>
+                                    <td>{{ $actividad->periodicidad }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Apellido Materno:</th>
-                                    <td>{{$funcionario->apellidoM}}</td>
+                                    <th>Fecha Inicio:</th>
+                                    <td>{{$actividad->fechaInicio}}</td>
                                 </tr>
                                 <tr>
-                                    <th>e-mail:</th>
-                                    <td>{{$funcionario->correo}}</td>
+                                    <th>Fecha Termino:</th>
+                                    <td>{{$actividad->fechaTermino}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Calidad Jurídica:</th>
-                                    <td>{{$funcionario->calidadJuridica}}</td>
+                                    <th>Cantidad de personas Asignadas:</th>
+                                    <td>{{$actividad->personasAsignadas}}</td>
                                 </tr>
                                 <tr>
-                                    <th>Unidad:</th>
-                                    <td>{{$funcionario->conformaUnidad->nombre}}</td>
+                                    <th>Cargo:</th>
+                                    <td>{{$actividad->cargo}}</td>
                                 </tr>
                                 <tr>
                                     <th>Estado:</th>
-                                    <td><p class="bg-success text-white justify-content-center" > {{$funcionario->estado = 1 ? 'Activo' : 'Inactivo'}} </p></td>
+                                    <td><p class="bg-success text-white justify-content-center" > {{$actividad->estado = 0 ? 'Completa' : 'Incompleta'}} </p></td>
+                                    {{--<p class="bg-danger text-white">This text represents danger.</p>--}}
                                 </tr>
                             </table>
                             <div class="text-right">
-                                <a href="{{ route('funcionarios.index') }}" class="btn btn-primary">Volver</a>
+                                <a href="{{ route('actividades.index') }}" class="btn btn-primary">Volver</a>
                             </div>
                         </div>
                     </div>
