@@ -51,8 +51,7 @@ class FuncionarioController extends Controller
      */
     public function show(Funcionario $funcionario)
     {
-        //return view('planificacion.funcionario.show',compact('funcionarios'));
-        return view('planificacion.funcionario.show');
+        return view('planificacion.funcionario.show', compact('funcionario'));
     }
 
     /**

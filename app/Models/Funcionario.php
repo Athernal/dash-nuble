@@ -23,10 +23,10 @@ class Funcionario extends Model
 
     public function conformaUnidad()
     {
-        return $this->belongsTo(Unidad::class);
+        return $this->hasOne(Unidad::class, 'id', 'unidad');
     }
     public function realizaActividad()
     {
         return $this->belongsToMany(Actividad::class);
-    }
+    }  
 }

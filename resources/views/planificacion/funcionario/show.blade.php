@@ -6,4 +6,59 @@
             {{ __('funcionarios') }}
         </h2>
     </x-slot>
+
+    <div class="py-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header " STYLE="font-variant:small-caps">
+                            Datos de {{$funcionario->nombre}} {{$funcionario->apellidoP}} {{$funcionario->apellidoM}}
+                        </div>
+                        <div class="card-body">
+                            <table class="table" style="table-layout:fixed;">
+                                <tr>
+                                    <th>Rut:</th>
+                                    <td>{{$funcionario->rut}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Nombre:</th>
+                                    <td>{{$funcionario->nombre}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Apellido Paterno:</th>
+                                    <td>{{$funcionario->apellidoP}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Apellido Materno:</th>
+                                    <td>{{$funcionario->apellidoM}}</td>
+                                </tr>
+                                <tr>
+                                    <th>e-mail:</th>
+                                    <td>{{$funcionario->correo}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Calidad Jurídica:</th>
+                                    <td>{{$funcionario->calidadJuridica}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Unidad:</th>
+                                    <td>{{$funcionario->conformaUnidad->nombre}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Estado:</th>
+                                    <td>{{$funcionario->estado = 1 ? 'Activo' : 'Inactivo'}}</td>
+                                </tr>
+                            </table>
+                            <div class="text-right">
+                                <a href="{{ route('funcionarios.index') }}" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
 </x-app-layout>
