@@ -20,7 +20,7 @@ class CreateFuncionariosTable extends Migration
             $table->string('apellidoM');
             $table->string('nombre');
             $table->string('calidadJuridica');
-            $table->string('unidad');
+            $table->foreign('id_unidad')->references('id')->on('unidads');
             $table->string('correo');
             $table->boolean('estado')->default(true);
             $table->timestamps();

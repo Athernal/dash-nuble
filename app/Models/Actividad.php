@@ -12,12 +12,18 @@ class Actividad extends Model
     protected $guarded = [];
     protected $fillable = [
         'id', 
-        'nombre', 
-        'periodicidad', 
+        'nombre',
+        'id_objetivo',
+        'periodicidad',
+        'productoEstadistico',
+        'horaporPersona',
+        'volumen',
+        'personasAsignadas', 
+        'totalHoras',
+        'cargo',
         'fechaInicio', 
         'fechaTermino', 
-        'personasAsignadas', 
-        'cargo',
+        'id_unidad',
         'estado' //finalizado o no 
     ];
 
@@ -28,5 +34,11 @@ class Actividad extends Model
     public function realizadaPorFuncionario()
     {
         return $this->belongsToMany(Funcionario::class);
+    }
+    public function objetivoVinculado(){
+        return $this->hasOne(ObjetivosRelacionados::class, 'id', 'id_objetivo');
+    }
+    public function unidadAsignada(){
+        return $this->hasOne(Unidad::class, 'id', 'id_unidad');
     }
 }

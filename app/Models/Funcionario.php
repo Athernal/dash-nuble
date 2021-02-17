@@ -28,5 +28,8 @@ class Funcionario extends Model
     public function realizaActividad()
     {
         return $this->belongsToMany(Actividad::class);
+    }
+    public function tieneHoras(){
+        return $this->hasMany(HorasFuncionario::class);
     }  
 }

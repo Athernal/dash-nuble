@@ -21,29 +21,54 @@
                                     <th>Nombre:</th>
                                     <td>{{ $actividad->nombre }}</td>
                                 </tr>
+                                <tr>{{--forenea--}}
+                                    <th>Objetivo vinculado:</th>
+                                    <td>{{ $actividad->objetivoVinculado->nombre }}</td>
+                                </tr>
                                 <tr>
                                     <th>Periodicidad:</th>
                                     <td>{{ $actividad->periodicidad }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Fecha Inicio:</th>
-                                    <td>{{$actividad->fechaInicio}}</td>
+                                    <th>Producto estadístico:</th>
+                                    <td>{{ $actividad->productoEstadistico }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Fecha Termino:</th>
-                                    <td>{{$actividad->fechaTermino}}</td>
+                                    <th>Horas por persona:</th>
+                                    <td>{{ $actividad->horaporPersona }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Cantidad de personas Asignadas:</th>
-                                    <td>{{$actividad->personasAsignadas}}</td>
+                                    <th>Volúmen:</th>
+                                    <td>{{ $actividad->volumen }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Cantidad de personas asignadas:</th>
+                                    <td>{{ $actividad->personasAsignadas }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Total horas:</th>
+                                    <td>{{ $actividad->totalHoras }}</td>
                                 </tr>
                                 <tr>
                                     <th>Cargo:</th>
-                                    <td>{{$actividad->cargo}}</td>
+                                    <td>{{ $actividad->cargo }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Fecha inicio:</th>
+                                    <td>{{ $actividad->fechaInicio }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Fecha termino:</th>
+                                    <td>{{ $actividad->fechaTermino }}</td>
+                                </tr>
+                                
+                                <tr>{{--foranea--}}
+                                    <th>Unidad:</th>
+                                    <td>{{ $actividad->unidadAsignada->nombre }}</td>
                                 </tr>
                                 <tr>
                                     <th>Estado:</th>
-                                    <td><p class="bg-success text-white justify-content-center" > {{$actividad->estado = 0 ? 'Completa' : 'Incompleta'}} </p></td>
+                                    <td><p class="bg-success text-white justify-content-center">{{ $actividad->estado == 1 ? 'Completa' : 'Incompleta' }}</p></td>
                                     {{--<p class="bg-danger text-white">This text represents danger.</p>--}}
                                 </tr>
                             </table>
