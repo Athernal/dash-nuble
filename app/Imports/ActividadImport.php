@@ -16,12 +16,19 @@ class ActividadImport implements ToModel
     {
         return new Actividad([
             'id',
-            'nombre' => $row[1],
-            'periodicidad' => $row[2], 
-            'fechaInicio' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[3]),
-            'fechaTermino' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[4]),
-            'personasAsignadas' => $row[5],
-            'cargo' => $row[6],
+            'nombre' => $row[2],
+            'id_objetivo' => $row[3],
+            'periodicidad' => $row[4],
+            'productoEstadistico' => $row[5],
+            'horaporPersona' => $row[6],
+            'volumen' => $row[7],
+            'personasAsignadas' => $row[8],
+            'totalHoras' => $row[9],
+            'cargo' => $row[10],
+            'fechaInicio' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[11]),
+            'fechaTermino' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row[12]),
+            'id_unidad' => $row[13],
+            'estado',
         ]);
     }
 }

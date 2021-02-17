@@ -10,7 +10,6 @@ class JefedeUnidad extends Model
     use HasFactory;
     protected $table = 'jefe_de_unidad';
     protected $fillable = [
-        'id', 
         'nombre', 
         'correo'
     ];

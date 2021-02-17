@@ -11,9 +11,8 @@ class ActividadHasFuncionario extends Model
     protected $table = 'actividad_has_funcionarios';
     protected $guarded = [];
     protected $fillable = [
-        'id', 
-        'idActividad',
-        'idFuncionario'
+        'id_actividad',
+        'id_funcionario'
     ];
 
     public function actividadRealizada()

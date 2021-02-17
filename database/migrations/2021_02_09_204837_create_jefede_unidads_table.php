@@ -14,7 +14,7 @@ class CreateJefedeUnidadsTable extends Migration
     public function up()
     {
         Schema::create('jefede_unidads', function (Blueprint $table) {
-            $table->primary('id');
+            $table->id();
             $table->string('nombre');
             $table->string('correo');
             $table->timestamps();

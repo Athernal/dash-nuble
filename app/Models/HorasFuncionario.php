@@ -11,7 +11,6 @@ class HorasFuncionario extends Model
     protected $table = 'horas_funcionarios';
     protected $guarded = [];
     protected $fillable = [
-        'id', 
         'id_funcionario', 
         'periodo',
         'horasTotalesPeriodo', 

@@ -10,7 +10,6 @@ class Objetivo extends Model
     use HasFactory;
     protected $table = 'objetivo';
     protected $fillable = [
-        'id', 
         'nombre', 
         'duracion', 
         'ponderacionAnual'

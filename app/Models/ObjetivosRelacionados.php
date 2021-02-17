@@ -11,7 +11,6 @@ class ObjetivosRelacionados extends Model
     protected $table = 'objetivos_relacionados';
     protected $guarded = [];
     protected $fillable = [
-        'id', 
         'codigo', 
         'nombre',
     ];

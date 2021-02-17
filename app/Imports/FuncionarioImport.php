@@ -21,7 +21,7 @@ class FuncionarioImport implements ToModel
             'apellidoM' => $row[3],
             'nombre' => $row[4],
             'calidadJuridica' => $row[5],
-            'unidad' => $row[6],
+            'id_unidad' => $row[6],
             'correo' => $row[7],
             'estado' => $row[8],
         ]);

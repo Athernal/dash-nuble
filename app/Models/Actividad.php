@@ -11,7 +11,6 @@ class Actividad extends Model
     protected $table = 'actividads';
     protected $guarded = [];
     protected $fillable = [
-        'id', 
         'nombre',
         'id_objetivo',
         'periodicidad',

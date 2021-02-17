@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateObjetivosRelacionadosTable extends Migration
+class CreateUnidadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateObjetivosRelacionadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('objetivos_relacionados', function (Blueprint $table) {
-            $table->primary('id');
-            $table->string('codigo');
+        Schema::create('unidads', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre');
+            $table->string('slug');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateObjetivosRelacionadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objetivos_relacionados');
+        Schema::dropIfExists('unidads');
     }
 }

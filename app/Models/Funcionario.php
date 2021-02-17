@@ -16,14 +16,14 @@ class Funcionario extends Model
         'apellidoM', 
         'nombre',
         'calidadJuridica',
-        'unidad',
+        'id_unidad',
         'correo',
         'estado',
     ];
 
     public function conformaUnidad()
     {
-        return $this->hasOne(Unidad::class, 'id', 'unidad');
+        return $this->hasOne(Unidad::class, 'id', 'id_unidad');
     }
     public function realizaActividad()
     {

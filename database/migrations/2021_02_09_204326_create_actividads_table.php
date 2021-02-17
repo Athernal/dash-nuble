@@ -14,18 +14,20 @@ class CreateActividadsTable extends Migration
     public function up()
     {
         Schema::create('actividads', function (Blueprint $table) {
-            $table->primary('id');
+            $table->id();
             $table->string('nombre');
+            $table->bigInteger('id_objetivo')->unsigned();
             $table->foreign('id_objetivo')->references('id')->on('objetivos_relacionados');
             $table->string('periodicidad');
             $table->string('productoEstadistico');
-            $table->integer('horaporPersona');
+            $table->float('horaporPersona');
             $table->integer('volumen');
             $table->integer('personasAsignadas');
-            $table->integer('totalHoras');
+            $table->float('totalHoras');
             $table->string('cargo');
             $table->date('fechaInicio');
             $table->date('fechaTermino');
+            $table->bigInteger('id_unidad')->unsigned();
             $table->foreign('id_unidad')->references('id')->on('unidads');
             $table->boolean('estado')->default(false);
             $table->timestamps();

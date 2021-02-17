@@ -10,7 +10,6 @@ class Unidad extends Model
     use HasFactory;
     protected $table = 'unidads';
     protected $fillable = [
-        'id', 
         'nombre', 
         'slug'
     ];

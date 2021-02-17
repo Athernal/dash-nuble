@@ -26,6 +26,14 @@
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="card-body">
+                    <div>
+                        <table class="table table-striped" style="width:100%">
+                            <th>Días Laborarles</th>
+                            <th>Días feriados legales</th>
+                            <th>Días efectivos</th>
+                            <th>Horas por año</th>
+                        </table>
+                    </div>
                     <div class="table-responsive-sm">
                         <table id="funcionarios" class="table table-striped" style="width:100%">
                             <thead class="thead-dark">

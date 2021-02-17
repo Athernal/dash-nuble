@@ -15,11 +15,12 @@ class CreateHorasFuncionariosTable extends Migration
     {
         Schema::create('horas_funcionarios', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_funcionario')->unsigned();
             $table->foreign('id_funcionario')->references('id')->on('funcionarios');
             $table->integer('periodo');
-            $table->integer('horasTotalesPeriodo');
-            $table->integer('horasAsignadasPeriodo');
-            $table->foreign('horasDisponiblesPeriodo');
+            $table->float('horasTotalesPeriodo');
+            $table->float('horasAsignadasPeriodo');
+            $table->float('horasDisponiblesPeriodo');
             $table->timestamps();
         });
     }

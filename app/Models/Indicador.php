@@ -10,7 +10,6 @@ class Indicador extends Model
     use HasFactory;
     protected $table = 'indicador';
     protected $fillable = [
-        'id', 
         'nombre', 
         'descripcion', 
         'porcentajeDesarrollado'
