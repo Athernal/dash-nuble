@@ -28,10 +28,18 @@
                 <div class="card-body">
                     <div>
                         <table class="table table-striped" style="width:100%">
-                            <th>Días Laborarles</th>
-                            <th>Días feriados legales</th>
-                            <th>Días efectivos</th>
-                            <th>Horas por año</th>
+                            <thead>
+                                <th>Año calendario</th>
+                                <td>1</td>
+                                <th>Días Laborarles</th>
+                                <td>días</td>
+                                <th>Días feriados legales</th>
+                                <td>días</td>
+                                <th>Días efectivos</th>
+                                <td>días</td>
+                                <th>Horas por año</th>
+                                <td>horas</td>
+                            </thead>
                         </table>
                     </div>
                     <div class="table-responsive-sm">
@@ -42,7 +50,7 @@
                                     <th scope="col" class="text-xs font-medium">Apellido Paterno</th>
                                     <th scope="col" class="text-xs font-medium">Apellido Materno</th>
                                     <th scope="col" class="text-xs font-medium">Unidad</th>
-                                    <th></th>
+                                    <th scope="col" class="text-xs font-medium">&nbsp</th>
 
                                 </tr>
                             </thead>

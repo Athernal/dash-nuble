@@ -12,8 +12,8 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header " STYLE="font-variant:small-caps">
-                            Detalle de la actividad
+                        <div class="card-header" STYLE="font-variant:small-caps">
+                            Detalle de la Actividad
                         </div>
                         <div class="card-body">
                             <table class="table" style="table-layout:fixed;">
@@ -21,37 +21,21 @@
                                     <th>Nombre:</th>
                                     <td>{{ $actividad->nombre }}</td>
                                 </tr>
-                                <tr>{{--forenea--}}
+                                <tr>{{-- forenea --}}
                                     <th>Objetivo vinculado:</th>
                                     <td>{{ $actividad->objetivoVinculado->nombre }}</td>
                                 </tr>
-                                <tr>
-                                    <th>Periodicidad:</th>
-                                    <td>{{ $actividad->periodicidad }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Producto estadístico:</th>
-                                    <td>{{ $actividad->productoEstadistico }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Horas por persona:</th>
-                                    <td>{{ $actividad->horaporPersona }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Volúmen:</th>
-                                    <td>{{ $actividad->volumen }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Cantidad de personas asignadas:</th>
-                                    <td>{{ $actividad->personasAsignadas }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Total horas:</th>
-                                    <td>{{ $actividad->totalHoras }}</td>
+                                <tr>{{-- foranea --}}
+                                    <th>Unidad:</th>
+                                    <td>{{ $actividad->unidadAsignada->nombre }}</td>
                                 </tr>
                                 <tr>
                                     <th>Cargo:</th>
                                     <td>{{ $actividad->cargo }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Total horas:</th>
+                                    <td>{{ $actividad->totalHoras }} horas</td>
                                 </tr>
                                 <tr>
                                     <th>Fecha inicio:</th>
@@ -61,15 +45,32 @@
                                     <th>Fecha termino:</th>
                                     <td>{{ $actividad->fechaTermino }}</td>
                                 </tr>
-                                
-                                <tr>{{--foranea--}}
-                                    <th>Unidad:</th>
-                                    <td>{{ $actividad->unidadAsignada->nombre }}</td>
+                                <tr>
+                                    <th>Periodicidad:</th>
+                                    <td>{{ $actividad->periodicidad }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Volúmen:</th>
+                                    <td>{{ $actividad->volumen }} {{ $actividad->volumen >1 ? 'interaciones': 'iteración'}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Horas por persona:</th>
+                                    <td>{{ $actividad->horaporPersona }} horas</td>
+                                </tr>
+                                <tr>
+                                    <th>Cantidad de personas asignadas:</th>
+                                    <td>{{ $actividad->personasAsignadas }}
+                                        {{ $actividad->personasAsignadas > 1 ? 'funcionarios' : 'funcionario' }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Producto estadístico:</th>
+                                    <td>{{ $actividad->productoEstadistico }}</td>
                                 </tr>
                                 <tr>
                                     <th>Estado:</th>
-                                    <td><p class="bg-success text-white justify-content-center">{{ $actividad->estado == 1 ? 'Completa' : 'Incompleta' }}</p></td>
-                                    {{--<p class="bg-danger text-white">This text represents danger.</p>--}}
+                                    <td>@if($actividad->estado == 1) <p class="bg-success text-white">Completa</p> @else 
+                                    <p class="bg-danger text-white">Incompleta</p> @endif
+                                    </td>
                                 </tr>
                             </table>
                             <div class="text-right">
@@ -77,8 +78,25 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <div class="card">
+                        <div class="card-header" STYLE="font-variant:small-caps">
+                            Funcionarios Asignados
+                        </div>
+                        <div class="card-body">
+                            <table class="table" style="table-layout:fixed;">
+                                <tr>
+                                    <th>Nombre:</th>
+                                    <td></td>
+                                </tr>
+                            </table>
+                            <div class="text-right">
+                                <a href="{{ route('asignarFuncionario.show', $actividad->id) }}" class="btn btn-primary">Asignar Funcionario</a>
+                                <a href="{{ route('actividades.index') }}" class="btn btn-primary">Volver</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </x-app-layout>

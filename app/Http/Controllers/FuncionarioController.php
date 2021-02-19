@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\FuncionarioImport;
 use App\Models\Funcionario;
+use App\Models\Actividad;
 
 class FuncionarioController extends Controller
 {
@@ -19,7 +20,7 @@ class FuncionarioController extends Controller
     public function index()
     {
         $funcionarios = Funcionario::orderBy('id', 'ASC')->get();
-        return view('planificacion.funcionario.index',compact('funcionarios'));
+        return view('planificacion.funcionario.index', compact('funcionarios'));
     }
 
     /**
@@ -96,5 +97,13 @@ class FuncionarioController extends Controller
 
         return redirect()->route('funcionarios.index')
             ->with('status_success', 'Se han importado los registros satisfactoriamente');
+    }
+
+    public function listarActividad(Funcionario $funcionario)
+    {
+        $actividades = Actividad::where('id_unidad', '=', $funcionario->id_unidad)
+        ->where('fechaTermino', '>', date('Y-m-d'))
+        ->where('estado', '<>', true)
+        ->get();
     }
 }

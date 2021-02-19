@@ -47,7 +47,8 @@
                                 </tr>
                                 <tr>
                                     <th>Estado:</th>
-                                    <td><p class="bg-success text-white justify-content-center" > {{$funcionario->estado = 1 ? 'Activo' : 'Inactivo'}} </p></td>
+                                    <td>@if($funcionario->estado == 1) <p class="bg-success text-white">Activo</p> @else 
+                                        <p class="bg-danger text-white" text-align: center>Inactivo</p> @endif
                                 </tr>
                             </table>
                             <div class="text-right">

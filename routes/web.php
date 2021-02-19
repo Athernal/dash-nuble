@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/principal', function () {
     return view('principal');
 })->name('principal');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/funcionarios', function (){
+Route::middleware(['auth:sanctum', 'verified'])->get('/funcionarios', function () {
     return view('funcionarios');
 })->name('funcionarios');
 
@@ -35,8 +35,5 @@ Route::post('/actividades/import', 'App\Http\Controllers\ActividadController@imp
 Route::resource('/actividades', 'App\Http\Controllers\ActividadController');
 Route::post('/funcionario/import', 'App\Http\Controllers\FuncionarioController@importExcel')->name('importFuncionario');
 
+Route::resource('/actividad/asignarFuncionario', 'App\Http\Controllers\ActividadHasFuncionarioController')->names('asignarFuncionario');
 
-
-
-
-    

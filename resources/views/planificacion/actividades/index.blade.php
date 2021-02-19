@@ -31,17 +31,19 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col" class="text-xs font-medium">Nombre</th>
-                                    <th scope="col" class="text-xs font-medium">Periodicidad</th>
+                                    <th scope="col" class="text-xs font-medium">Unidad</th>
+                                    {{--<th scope="col" class="text-xs font-medium">Periodicidad</th>--}}
                                     <th scope="col" class="text-xs font-medium">Fecha Inicio</th>
                                     <th scope="col" class="text-xs font-medium">Fecha Término</th>
-                                    <th> </th>
+                                    <th scope="col" class="text-xs font-medium">&nbsp</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @forelse ($actividades as $actividad)
                                     <tr>
                                         <td class="text-xs font-medium">{{ $actividad->nombre }}</td>
-                                        <td class="text-xs font-medium">{{ $actividad->periodicidad }}</td>
+                                        <td class="text-xs font-medium">{{ $actividad->unidadAsignada->nombre }}</td>
+                                        {{--<td class="text-xs font-medium">{{ $actividad->periodicidad }}</td>--}}
                                         <td class="text-xs font-medium">{{ $actividad->fechaInicio }}</td>
                                         <td class="text-xs font-medium">{{ $actividad->fechaTermino }}</td>
                                         <td><button type="button" class="btn btn-primary"><a

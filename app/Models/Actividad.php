@@ -40,4 +40,7 @@ class Actividad extends Model
     public function unidadAsignada(){
         return $this->hasOne(Unidad::class, 'id', 'id_unidad');
     }
+    public function actividadTieneFuncionario(){
+        return $this->hasMany(ActividadHasFuncionario::class);
+    }
 }

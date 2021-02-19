@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\ActividadImport;
 use App\Models\Actividad;
+use App\Models\Funcionario;
 
 class ActividadController extends Controller
 {
@@ -63,7 +64,7 @@ class ActividadController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -98,4 +99,5 @@ class ActividadController extends Controller
         return redirect()->route('actividades.index')
             ->with('status_success', 'Se han importado los registros satisfactoriamente');
     }
+
 }
